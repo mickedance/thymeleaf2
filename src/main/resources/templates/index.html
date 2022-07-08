@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script defer th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link th:rel="stylesheet" th:href="@{/css/my.css} "/>
+
+    <title>Index</title>
+</head>
+<body>
+<nav th:replace=" fragments/navbar :: navbar "></nav>
+
+<h1>Home</h1>
+<nav th:replace=" fragments/footer :: footer "></nav>
+
+</body>
+</html>

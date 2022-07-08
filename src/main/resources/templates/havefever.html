@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script defer th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link th:rel="stylesheet" th:href="@{/css/my.css} "/>
+
+
+    <title>Do you have fever</title>
+</head>
+<body>
+<nav th:replace=" fragments/navbar :: navbar "></nav>
+<div class="container-fluid">
+
+
+
+
+    <div class="row">
+        <div class="col-4 offset-3">
+            <form method="post" th:action="@{/temperature}">
+                <label>What body temperature do you got? (Celsius)</label><br>
+                <input type="text" th:attr="name='degree'">
+                <button type="submit" class="btn btn-primary" th:text="#{btn.submit}"></button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 offset-3">
+            <div class="bg-success" th:if="${type eq 'success'}" th:text="${message}" ></div>
+            <div class="bg-warning" th:if="${type eq 'warning'}" th:text="${message}" ></div>
+            <div class="bg-danger" th:if="${type eq 'danger'}" th:text="${message}" ></div>
+        </div>
+    </div>
+</div>
+
+<nav th:replace=" fragments/footer :: footer "></nav>
+
+</body>
+</html>
